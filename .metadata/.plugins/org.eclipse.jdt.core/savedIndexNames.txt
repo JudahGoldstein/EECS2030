@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+/home/judah/EECS2030/.metadata/.plugins/org.eclipse.jdt.core
-2248842302.index
-2053236232.index
