@@ -1,0 +1,11 @@
+!SESSION 2021-05-27 22:53:48.146 -----------------------------------------------
+eclipse.buildId=4.19.0.I20210303-1800
+java.version=15.0.2
+java.vendor=N/A
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_CA
+Command-line arguments:  -data /home/judah/EECS2030 -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui.navigator 4 0 2021-05-27 22:56:37.518
+!MESSAGE Cannot find navigator content extension (using triggerPoints) for object "<null>" parent path: "src [in Fibinachi]
+  <default> (not open)
+  model (not open)". Check that you have an expression for this object in a navigatorContent triggerPoints or enablement.
