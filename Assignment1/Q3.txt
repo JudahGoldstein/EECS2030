@@ -1,0 +1,4 @@
+﻿Answer: 4
+
+
+A Loop Invariant is a logical expression / mathematical function that is true before and after every iteration of a Loop and does not change between iterations of said loop. Loop Invariants are often used to model the output of a loop for testing and proving correctness.
