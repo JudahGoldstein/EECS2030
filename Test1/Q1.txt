@@ -1,0 +1,4 @@
+﻿Answer: 4 
+
+
+By process of elimination, 1 and 3 will print the pointer to the b object, 2 will compare the class’s value to an empty string returning the boolean result. getType returns the categorical type of an object in full form (i.e char -> character, int -> integer) since we haven't defined this for the B class it will cause a compile time error.

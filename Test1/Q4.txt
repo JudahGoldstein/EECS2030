@@ -1,0 +1,3 @@
+our loop invariant is {x is a positive integer && x>0} and the recurrence relation for a factorial that terminates in finite time is:
+n!=n*(n-1)!, {x ∈ I: x>0}
+since the limit on the domain of the function, and therefore the conditions in which the function will not run forever are the same as the loop invariant we can be confident the funtion will not have an infinte loop.

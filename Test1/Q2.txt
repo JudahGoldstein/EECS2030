@@ -1,0 +1,3 @@
+﻿Answer: 3
+ 
+For a method to be a valid overload it must be identifiably different in-code, this means it must have either a different number and/or different type(s) of parameters. 1, 2, and 4 all have only one parameter which is a double, same as the method being attempted to overload.
