@@ -42,20 +42,24 @@ public class StudentCodes {
      */
     @RequestMapping(value = "/mlslookup", method = RequestMethod.GET)
     public @ResponseBody
-    MultipleListingService mlsLookup(@RequestParam(value = "uuid", required = true) UUID uuid)
+    MultipleListingService mlsLookup(@RequestParam(value = "uuid") UUID uuid)
     {
-        MultipleListingService record = null;
+        MultipleListingService record;
         try (LineIterator it = FileUtils.lineIterator(mlsFile.getFile(), "UTF-8"))
         {
-            // @todo for students: Modify below and add your cache lookup code ... /////////////////
             while (it.hasNext()) {
                 String line = it.nextLine();
+                if(Singleton.cacheLookup(uuid) != null){
+                    System.out.println("yay!");
+                    return Singleton.cacheLookup(uuid);
+                }
                 if (line.startsWith(uuid.toString())) {
                     record = A2Utils.createMLSFromTextRecord(line);
                     logger.debug(record.toString());
+                    Singleton.cache(uuid, record);
                     return record;
                 }
-            } //////////////////////////////////////////////////////////////////////////////////////
+            }
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "MLS record not found");
         }
         catch (IOException e)
