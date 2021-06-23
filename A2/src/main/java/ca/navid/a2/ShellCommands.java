@@ -21,12 +21,10 @@ public class ShellCommands {
      * @return message to echo back to the console
      */
     @ShellMethod("Flush the cache ... ")
-    public String cacheflush(@ShellOption(defaultValue = "false") String forced)
+    public String cacheflush()
     {
-        if (Boolean.valueOf(forced))
-            return "Forcing flushed ...";
-        else
-            return "Regular flushed ...";
+        Singleton.clearCache();
+        return "cache flushed";
     }
 
 }
