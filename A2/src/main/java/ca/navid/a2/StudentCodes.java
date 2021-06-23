@@ -50,7 +50,6 @@ public class StudentCodes {
             while (it.hasNext()) {
                 String line = it.nextLine();
                 if(Singleton.cacheLookup(uuid) != null){
-                    System.out.println("working!");
                     return Singleton.cacheLookup(uuid);
                 }
                 if (line.startsWith(uuid.toString())) {

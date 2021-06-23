@@ -15,9 +15,7 @@ public class ShellCommands {
     private static final Logger logger = LoggerFactory.getLogger(ShellCommands.class);
 
     /**
-     * Spring Shell method example. Use this in case you want to invalidate your cache.
-     * Try running "cacheflush --forced true"
-     * @param forced should we force wipe the cache right away?
+     * clears cache
      * @return message to echo back to the console
      */
     @ShellMethod("Flush the cache ... ")
