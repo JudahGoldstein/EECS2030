@@ -49,13 +49,13 @@ public class StudentCodes {
         {
             while (it.hasNext()) {
                 String line = it.nextLine();
-                if(Singleton.cacheLookup(uuid) != null){
-                    return Singleton.cacheLookup(uuid);
+                if(Singleton.getInstance().cacheLookup(uuid) != null){
+                    return Singleton.getInstance().cacheLookup(uuid);
                 }
                 if (line.startsWith(uuid.toString())) {
                     record = A2Utils.createMLSFromTextRecord(line);
                     logger.debug(record.toString());
-                    Singleton.cache(uuid, record);
+                    Singleton.getInstance().cache(uuid, record);
                     return record;
                 }
             }

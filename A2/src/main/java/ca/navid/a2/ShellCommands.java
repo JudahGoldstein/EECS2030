@@ -21,7 +21,7 @@ public class ShellCommands {
     @ShellMethod("Flush the cache ... ")
     public String cacheflush()
     {
-        Singleton.clearCache();
+        Singleton.getInstance().clearCache();
         return "cache flushed";
     }
 

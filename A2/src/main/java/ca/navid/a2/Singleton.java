@@ -12,11 +12,10 @@ public class Singleton {
     /**
      * cache hashtable
      */
-    private static final Hashtable<UUID, MultipleListingService> cache = new Hashtable<>();
+    public static final Hashtable<UUID, MultipleListingService> cache = new Hashtable<>();
     /**
      * single static instance of class, needed to access singleton class.
      */
-    @SuppressWarnings("InstantiationOfUtilityClass")
     public static Singleton instance = new Singleton();
     /**
      * constructor is made private, prevents instantiation of new instances
@@ -26,7 +25,7 @@ public class Singleton {
      * @param uuid uuid of the mls entry not in cache
      * @param record corresponding record to be cached
      */
-    public static void cache(UUID uuid, MultipleListingService record){
+    public void cache(UUID uuid, MultipleListingService record){
         cache.put(uuid, record);
     }
     /**
@@ -34,7 +33,7 @@ public class Singleton {
      * @return mls corresponding to the UUID if it is in cache, otherwise return null
      */
     @Nullable
-    public static MultipleListingService cacheLookup(UUID uuid){
+    public MultipleListingService cacheLookup(UUID uuid){
         if(cache.containsKey(uuid)){
             return cache.get(uuid);
         }
@@ -43,7 +42,12 @@ public class Singleton {
     /**
      * clears the cache
      */
-    public static void clearCache(){
+    public void clearCache(){
         cache.clear();
     }
+
+    public static Singleton getInstance(){
+        return instance;
+    }
 }
+
